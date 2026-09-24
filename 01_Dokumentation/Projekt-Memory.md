@@ -68,8 +68,46 @@
 
 **Traefik** lauscht auf 80/443 für spätere HTTPS-Nutzung (Domain noch nicht aufgeschaltet).
 
-**Repo auf VPS:** `/home/hermes/Hermes-VTOL` (gespiegelt von GitHub `Superkatzo/Hermes-VTOL`)
+**Repo auf VPS:** `/home/hermes/Hermes-VTOL` (gespiegelt von GitHub `rotorbase/Hermes-VTOL` — **Account-Wechsel 24.09.2026 von Superkatzo**)
 **Lokales Repo auf PC:** `C:\Users\willow\Documents\Hermes-VTOL`
+
+---
+
+## 🔄 GitHub-Account (Stand 24.09.2026)
+
+**Aktiver Account:** `rotorbase` (Email `gh@speculatrix.de`, Domain `speculatrix.de`).
+**Brand:** Homepage „Speculatrix VTOL" ≠ Repo-Name „Hermes-VTOL" — bewusst zwei Namen, ein Projekt.
+
+**Repos:**
+
+| Repo | Visibility | Zweck | Remote |
+|---|---|---|---|
+| `rotorbase/Hermes-VTOL` | public | Öffentliches Projekt (Doku, CAD-Export, ConOps-Vorlage) | `git@github.com:rotorbase/Hermes-VTOL.git` |
+| `rotorbase/Hermes-VTOL-internal` | private | CAD-native, 3D-Druck-Profile, interne Doku, NDA-Material | `git@github.com:rotorbase/Hermes-VTOL-internal.git` |
+
+**Auth:** SSH ausschließlich (kein PAT für git push/pull). Keys:
+
+- Windows: `C:\Users\willow\.ssh\id_ed25519` (Titel "Windows Desktop" auf GitHub)
+- VPS: `/opt/data/.ssh/id_ed25519` (Titel "VPS Hermes" auf GitHub)
+
+**Mirror-Vorgang 24.09.2026:** `git push --mirror` von Superkatzo → rotorbase, 538 Objekte übertragen. Alte Remote `git@github.com:Superkatzo/Hermes-VTOL.git` durch SSH-URL `rotorbase/Hermes-VTOL.git` ersetzt.
+
+**gh CLI Auth-Status (24.09.2026):** `gh` zeigt noch Superkatzo-Login — das ist OK, weil wir für `git push/pull` nur SSH brauchen. `gh`-Calls (z. B. `gh repo view`) funktionieren weiterhin, zeigen aber den Superkatzo-Account als aktiv. Für rotorbase-API-Calls stattdessen REST API mit rotorbase-PAT nutzen, oder `gh auth logout` + manuell neu einloggen.
+
+**Push-Sequenz (Standard):**
+```bash
+cd "C:/Users/willow/Documents/Hermes-VTOL"
+git remote -v                # zeigt rotorbase-SSH-URL
+git fetch origin             # Verbindungstest
+git pull --rebase --autostash
+git push
+```
+
+**Offene Aufgaben (24.09.2026):**
+
+- [ ] `rotorbase/Hermes-VTOL-internal` Repo auf github.com manuell anlegen (User im Browser), danach lokaler Clone + Initial-Commit + Push
+- [ ] VPS-Klon auf neue Remote umstellen: `git remote set-url origin git@github.com:rotorbase/Hermes-VTOL.git` auf `/home/hermes/Hermes-VTOL/`
+- [ ] gh CLI neu autorisieren (optional, nur wenn API-Calls via gh nötig)
 
 ---
 
