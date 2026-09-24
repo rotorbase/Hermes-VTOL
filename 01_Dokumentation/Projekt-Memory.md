@@ -95,6 +95,7 @@
 **gh CLI Auth-Status (24.09.2026):** `gh` zeigt noch Superkatzo-Login — das ist OK, weil wir für `git push/pull` nur SSH brauchen. `gh`-Calls (z. B. `gh repo view`) funktionieren weiterhin, zeigen aber den Superkatzo-Account als aktiv. Für rotorbase-API-Calls stattdessen REST API mit rotorbase-PAT nutzen, oder `gh auth logout` + manuell neu einloggen.
 
 **Push-Sequenz (Standard):**
+
 ```bash
 cd "C:/Users/willow/Documents/Hermes-VTOL"
 git remote -v                # zeigt rotorbase-SSH-URL
