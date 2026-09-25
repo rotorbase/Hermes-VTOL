@@ -81,19 +81,22 @@ Hermes-VTOL/
 
 ```bash
 # Initial-Setup (einmalig)
-git clone https://github.com/Superkatzo/Hermes-VTOL.git
+git clone git@github.com:rotorbase/Hermes-VTOL.git
 cd Hermes-VTOL
 
 # Änderungen committen
 git add .
 git commit -m "Aussagekräftige Beschreibung"
 git push
-```text
+```
 
 ## Lizenz
 
-Aktuell **privates Repository** — Lizenzentscheidung ausstehend.
+- **Code** (Skripte, Configs, Source-Dateien): [MIT License](LICENSE) — frei nutzbar, kommerziell, mit Namensnennung
+- **Dokumentation, Bilder, Renderings**: [CC BY 4.0](LICENSE-docs) — frei nutzbar auch kommerziell, mit Namensnennung
 
 ## Kontakt
 
-Superkatzo (@Superkatzo)
+- **Projekt:** [github.com/rotorbase/Hermes-VTOL](https://github.com/rotorbase/Hermes-VTOL)
+- **Homepage:** [speculatrix.de](https://speculatrix.de)
+- **Maintainer:** [@rotorbase](https://github.com/rotorbase)
