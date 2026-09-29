@@ -1,0 +1,44 @@
+name: Markdown Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install markdownlint
+        run: npm install -g markdownlint-cli
+
+      - name: Run markdownlint (excluding TODO/, blog/, CHANGELOG.md)
+        run: |
+          set -e
+          # Nur "echte" Doku-MDs linten - TODOs, Blog-Posts und CHANGELOG ausschliessen
+          FILES=$(find . -type f -name '*.md' \
+            -not -path './node_modules/*' \
+            -not -path './.git/*' \
+            -not -path '*/build/*' \
+            -not -path './01_Dokumentation/Todos/*' \
+            -not -path './docs/_posts/*' \
+            -not -name 'CHANGELOG.md')
+          if [ -z "$FILES" ]; then
+            echo "Keine MD-Dateien zum Linten."
+            exit 0
+          fi
+          echo "$FILES" | tr ' ' '\n'
+          markdownlint $FILES \
+            --disable MD013 \
+            --disable MD024 \
+            --disable MD033 \
+            --disable MD060
