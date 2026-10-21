@@ -70,7 +70,7 @@ fi
 
 TIMESTAMP=$(date +'%Y-%m-%d %H:%M:%S %Z')
 TELEGRAM_BOT_TOKEN=$(sudo -S -p '' docker exec hermes-agent-ekgx-hermes-agent-1 bash -c 'grep ^TELEGRAM_BOT_TOKEN /opt/data/.env | cut -d= -f2' 2>/dev/null | tr -d "'"'\''\r')
-CHAT_ID="858968389"
+CHAT_ID=$(sudo -S -p '' docker exec hermes-agent-ekgx-hermes-agent-1 bash -c 'grep ^TELEGRAM_HOME_CHANNEL /opt/data/.env | cut -d= -f2' 2>/dev/null | tr -d "'"'\''\r')
 
 MESSAGE="${SEVERITY} *${TITLE}*
 

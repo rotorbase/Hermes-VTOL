@@ -115,7 +115,7 @@ git push
 
 ## ⏰ VPS-Cronjobs (11 aktiv, Stand 23.09.2026)
 
-Alle Skripte versioniert in `13_VPS_Config/`. Telegram-Vorlage: Token live aus `/opt/data/.env` (`docker exec ... grep ^TELEGRAM_BOT_TOKEN`), CHAT_ID = `858968389` (TELEGRAM_HOME_CHANNEL). UTC ↔ MESZ = +2 im Sommer.
+Alle Skripte versioniert in `13_VPS_Config/`. Telegram-Vorlage: Token live aus `/opt/data/.env` (`docker exec ... grep ^TELEGRAM_BOT_TOKEN`). UTC ↔ MESZ = +2 im Sommer.
 
 | Cron | Skript | Zweck |
 | --- | --- | --- |

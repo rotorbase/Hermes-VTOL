@@ -43,7 +43,7 @@ if [ -z "$TELEGRAM_BOT_TOKEN" ]; then
 fi
 
 # Sende via direkter Telegram-Bot-API
-CHAT_ID="858968389"
+CHAT_ID=$(sudo docker exec hermes-agent-ekgx-hermes-agent-1 bash -c 'grep ^TELEGRAM_HOME_CHANNEL /opt/data/.env | cut -d= -f2' 2>/dev/null | tr -d '\r')
 URL="https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage"
 
 curl -s -X POST "$URL" \

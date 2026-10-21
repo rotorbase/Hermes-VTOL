@@ -59,8 +59,7 @@ Zielgruppen: SAR, Wildschutz, Behörden, kommerzielle Inspektion.
 | Markdown | Markdownlint; MD013/024/033/060 sind per CI deaktiviert, MD047 (Newline am Ende) nicht |
 | Commits | Conventional Commits (`feat:`, `fix:`, `ci:`, `chore:`, `docs:`) |
 
-Doku-Push läuft über einen Telegram-Sidecar (CHAT_ID 858968389). Ein
-Polling-Konflikt mit dem Hauptbot ist möglich, siehe Vorfall-Protokoll.
+Doku-Push lief früher über einen Telegram-Sidecar (ersetzt durch `shared-chat-todo`-Skill, 2026-10-21). Polling-Konflikt mit Hauptbot war möglich, siehe Vorfall-Protokoll.
 
 ## Persistenz
 
