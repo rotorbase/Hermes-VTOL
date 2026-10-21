@@ -1,9 +1,13 @@
 # AGENTS.md — Projektkontext Hermes-VTOL
 
-Projektanweisungen für den Agenten im Repo `rotorbase/Hermes-VTOL`.
-Persona und Kommunikationsstil stehen in `SOUL.md`, Werkzeug-Eigenheiten und
-gelernte Lehren in `MEMORY.md`. Diese Datei hält das, was **nur dieses Projekt**
-betrifft.
+**Diese Datei ist verbindlich.** Sie wird bei jeder Session geladen, deren
+Arbeitsverzeichnis im Repo liegt. DieVRAM-, Mem0- und CLI-Regeln im Abschnitt
+„Maschinen-Spezifika" gelten ab hier ohne Rückfrage.
+
+Wenn du in einer Session mit Arbeitsverzeichnis `C:\Users\willow` arbeitest:
+Die Projektregeln liegen in `~/Documents/Hermes-VTOL/AGENTS.md`. **Lies diese
+Datei, bevor du Projekt-Aussagen triffst** — insbesondere die
+Maschinen-Spezifika.
 
 ## Produkt
 
