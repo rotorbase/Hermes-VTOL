@@ -5,7 +5,7 @@
 > alles Spezifische, das nicht jeder Chat braucht, lebt hier und wird bei Bedarf geladen.
 >
 > **Pflege:** Manuell oder per Chat-Befehl „speichere X in die Memory-Datei".
-> Letzte Aktualisierung: 2026-09-24
+> **Letzte Aktualisierung:** 2026-10-01 (Security-Review: persönliche Daten in `INTERNAL-VPS-DETAILS.md` ausgelagert)
 
 ---
 
@@ -47,11 +47,14 @@
 
 ## 🏗️ VPS-Infrastruktur (Hostinger KVM 1)
 
+> **Sicherheits-Hinweis (Stand 2026-10-01):** Konkrete Werte (IP, Hostname, persönliche Pfade, SSH-Aliase, Schlüssel-Pfade) sind in **`INTERNAL-VPS-DETAILS.md`** ausgelagert (lokal, in `.gitignore`, **nicht** im Repo).
+> Diese Sektion dokumentiert nur die **Struktur** und das **Vorgehen**.
+
 **Server:**
 
-- Hostname: `srv1998925.hstgr.cloud`
-- IP: `179.198.208.197`
-- SSH-Alias: `hermes-vps` (in `~/.ssh/config`)
+- Anbieter: Hostinger · Plan: KVM 1 · Standort: Deutschland
+- IP, Hostname: siehe `INTERNAL-VPS-DETAILS.md`
+- SSH-Alias: siehe `INTERNAL-VPS-DETAILS.md`
 - Auth: SSH-Key (auch root möglich)
 - Admin-Passwort wurde vom User über hPanel geändert
 
@@ -63,19 +66,20 @@
 - **KRITISCH: Externer Docker-Port wechselt dynamisch** (beobachtet: 32768 ↔ 32770)
 - → Vor jedem Tunnel: `sudo docker ps --format "{{.Ports}}" | grep hermes` prüfen
 - → SSH-Config `LocalForward` entsprechend anpassen, sonst `Connection refused` auf `localhost:8080`
+- Konkrete Port- und Tunnel-Befehle: siehe `INTERNAL-VPS-DETAILS.md`
 
 **Auto-Tunnel-Helper:** `13_VPS_Config/Hermes-Tunnel-Auto.bat` (portiert die dynamische Port-Erkennung in eine Scheduled Task)
 
 **Traefik** lauscht auf 80/443 für spätere HTTPS-Nutzung (Domain noch nicht aufgeschaltet).
 
-**Repo auf VPS:** `/home/hermes/Hermes-VTOL` (gespiegelt von GitHub `rotorbase/Hermes-VTOL` — **Account-Wechsel 24.09.2026 von Superkatzo**)
-**Lokales Repo auf PC:** `C:\Users\willow\Documents\Hermes-VTOL`
+**Repo auf VPS:** `/home/hermes/Hermes-VTOL` (gespiegelt von GitHub `rotorbase/Hermes-VTOL`)
+**Lokales Repo auf PC:** siehe `INTERNAL-VPS-DETAILS.md` (User-spezifisch)
 
 ---
 
 ## 🔄 GitHub-Account (Stand 24.09.2026)
 
-**Aktiver Account:** `rotorbase` (Email `gh@speculatrix.de`, Domain `speculatrix.de`).
+**Aktiver Account:** `rotorbase` (Kontakt-Email siehe `INTERNAL-VPS-DETAILS.md`, Brand-Website: <https://speculatrix.de>).
 **Brand:** Homepage „Speculatrix VTOL" ≠ Repo-Name „Hermes-VTOL" — bewusst zwei Namen, ein Projekt.
 
 **Repos:**
@@ -85,19 +89,16 @@
 | `rotorbase/Hermes-VTOL` | public | Öffentliches Projekt (Doku, CAD-Export, ConOps-Vorlage) | `git@github.com:rotorbase/Hermes-VTOL.git` |
 | `rotorbase/Hermes-VTOL-internal` | private | CAD-native, 3D-Druck-Profile, interne Doku, NDA-Material | `git@github.com:rotorbase/Hermes-VTOL-internal.git` |
 
-**Auth:** SSH ausschließlich (kein PAT für git push/pull). Keys:
+**Auth:** SSH ausschließlich (kein PAT für git push/pull). Schlüssel-Pfade siehe `INTERNAL-VPS-DETAILS.md`.
 
-- Windows: `C:\Users\willow\.ssh\id_ed25519` (Titel "Windows Desktop" auf GitHub)
-- VPS: `/opt/data/.ssh/id_ed25519` (Titel "VPS Hermes" auf GitHub)
+**Mirror-Vorgang:** Repo wurde 24.09.2026 per `git push --mirror` von einem früheren Account auf den aktuellen `rotorbase`-Account übertragen, 538 Objekte. Aktuelle Remote: `rotorbase/Hermes-VTOL.git` (SSH).
 
-**Mirror-Vorgang 24.09.2026:** `git push --mirror` von Superkatzo → rotorbase, 538 Objekte übertragen. Alte Remote `git@github.com:Superkatzo/Hermes-VTOL.git` durch SSH-URL `rotorbase/Hermes-VTOL.git` ersetzt.
-
-**gh CLI Auth-Status (24.09.2026):** `gh` zeigt noch Superkatzo-Login — das ist OK, weil wir für `git push/pull` nur SSH brauchen. `gh`-Calls (z. B. `gh repo view`) funktionieren weiterhin, zeigen aber den Superkatzo-Account als aktiv. Für rotorbase-API-Calls stattdessen REST API mit rotorbase-PAT nutzen, oder `gh auth logout` + manuell neu einloggen.
+**gh CLI Auth-Status:** `gh` zeigt aktuell noch einen alten Login — das ist OK, weil wir für `git push/pull` nur SSH brauchen. `gh`-Calls (z. B. `gh repo view`) funktionieren weiterhin. Für API-Calls mit dem aktuellen Account stattdessen REST API nutzen, oder `gh auth logout` + manuell neu einloggen.
 
 **Push-Sequenz (Standard):**
 
 ```bash
-cd "C:/Users/willow/Documents/Hermes-VTOL"
+cd "<lokaler Repo-Pfad siehe INTERNAL-VPS-DETAILS.md>"
 git remote -v                # zeigt rotorbase-SSH-URL
 git fetch origin             # Verbindungstest
 git pull --rebase --autostash
@@ -238,3 +239,27 @@ Alle Skripte versioniert in `13_VPS_Config/`. Telegram-Vorlage: Token live aus `
 | Datum | Änderung |
 |---|---|
 | 2026-09-24 | Initiale Datei angelegt — Detailwissen aus Hermes-Memory ausgelagert (Cronjob-Liste, VPS-Details, Bot-Team-Plan, Persistenz-Strategie) |
+| 2026-10-01 | Security-Review: Email, Windows-Username, VPS-IP, SSH-Aliase und Schlüssel-Pfade in neue Datei `INTERNAL-VPS-DETAILS.md` ausgelagert (lokal, in `.gitignore`) |
+
+---
+
+## 🕐 Offene Erinnerungen / Deferred-Decisions
+
+| Datum/Uhrzeit | Worum | Owner | Quelle |
+|---|---|---|---|
+| 2026-10-22 10:30 MESZ (= 08:30 UTC) | VPS-Update `hvps-hermes-agent` v0.21.3 → v0.22.0 — nochmal angucken. User-Pause 2026-10-15 wegen Session-Frust. | testbot | Session 15.10.2026 — Telegram-Cronjob auf dem VPS (`hermes_update_reminder.sh`, self-disabling). |
+
+### 📌 Details zum verschobenen Update
+
+- **Container startete** 2026-09-22 04:01 UTC mit `code_version=0.21.3`, `code_sha=2463550c972800e0e443aa17ce0405912c80f296`.
+- **Neues Image verfügbar:** digest `sha256:b855f3555b9e424990ffb9f8f082ac9429a62d62a0b2752b87554b1344df95b8` (published 2026-10-13, „v0.22.0 The Threshold Release").
+- **Inhalt:** 4 Patches + Minor-Release; v0.21.4 „One-Gateway Patch" mit ~1.812 PRs (gateway-relevant), v0.22.0 mit Codebase-Refactor ⅓ kleiner.
+- **Migration:** `hermes config check` + `hermes config migrate` verfügbar; einige Legacy-Felder auto-migrieren (z. B. `compression.*` → `auxiliary.compression.*` auf config-version 17).
+- **Persistenz-Warnung:** Mem0-Backend war zum Speicherzeitpunkt down (OpenAI-Key/pgvector — identisch zu „Mem0 backend not initialized"). Daher Repo-Standort gewählt per mem0-integration-Skill-Fallback. Nachholen, wenn Mem0 wieder läuft.
+
+| Datum | Änderung |
+|---|---|
+| 2026-10-15 | 7-Tage-Erinnerung VPS-Update (s. oben) eingetragen. Mem0 war down → Fallback Repo. |
+| 2026-10-21 | Audit der Hermes-Systemkonfiguration (Fix A/B/C/D). Default-Profil-MEMORY.md bleibt leer — Default-Profil wird technisch bedient (served_profiles), aber praktisch nicht aktiv genutzt (alle Bots auf `testbot`-Profil geroutet). Bewusst kein Befüllen, würde zu Datenmüll führen. |
+| 2026-10-21 | Mem0-Obsoleszenz-Update: Hard-Rule `caa5b920` aktualisiert. Alt: „Memory nicht zumüllen, Mem0 als Langzeit-Storage". Neu: „L1-L6/L12 bleiben in MEMORY.md/USER.md für sichtbaren System-Prompt; andere persistente Fakten nach Mem0 oder Repo, gemäß Layer-Trennung der Doku". Begründung: die obsolete „Memory nicht zumüllen"-Formulierung war Workaround, jetzt durch regelkonforme Trennung strukturell gelöst. |
+| 2026-10-21 | Lint-Disziplin-Lehre (Selbstkorrektur): Linter-Warnungen sind Hypothesen, kein Rauschen. Default: fix the lint. Vor "advisory / false positive": Doku-Seite lesen, Beleg dass Regel nicht greift. Heute zwei Belege: `oversized-body` auf mem0-integration war korrekt geflaggt (24.891 chars >= ~24k-Schwelle, `skills.md` Z.12595); gestern `shell-utility-reference` auf docu-fidelity war teilweise korrekt (`find`/`ls` ersetzbar durch `search_files (target='files')`, `awk` im Splitter-Kontext nicht ersetzbar). Anti-Pattern 21.10.: Lint ohne Doku-Check abtun — ist L12-Verletzung (Behauptung ohne Beleg). |

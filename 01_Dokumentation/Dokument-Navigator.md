@@ -137,8 +137,10 @@
 
 ## 📂 Wo die Dokumente sind
 
-Alle Originaldateien in: `C:\Users\willow\Documents\EASA\`
+> Originaldateien (EASA-PDFs, JARUS, LuftVO) liegen **lokal auf dem Entwickler-PC**, nicht im Repo (Lizenz-/Copyright-Gründe).
+> Konkrete Pfade siehe `INTERNAL-VPS-DETAILS.md` (lokal, in `.gitignore`).
+> Versionsnummern, Verweise und Online-Links sind in den jeweiligen Doku-Dateien (`Regulatorik-Kurzfassung.md`, `JARUS-Übersicht.md`) dokumentiert.
 
 ---
 
-*Letzte Aktualisierung: 2026-09-22*
+*Letzte Aktualisierung: 2026-10-01*

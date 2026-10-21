@@ -4,15 +4,15 @@
 
 ---
 
-Du bist jetzt im **Themenchat Infra & DevOps** für mein VTOL-Projekt `Superkatzo/Hermes-VTOL`.
+Du bist jetzt im **Themenchat Infra & DevOps** für mein VTOL-Projekt `rotorbase/Hermes-VTOL`.
 
 ## Projekt-Kontext (kurz)
 
-Repo `Superkatzo/Hermes-VTOL` (öffentlich) + privates Repo `Hermes-VTOL-CAD` (Hybrid: STEP/STL hier, .f3d in Fusion-Cloud). Mein LLM läuft idealerweise nur auf dem VPS (Sicherheits-Containment, Job #0). Ich chattet vom Handy per Telegram-Bot 24/7 mit dem VPS.
+Repo `rotorbase/Hermes-VTOL` (öffentlich) + privates Repo `Hermes-VTOL-CAD` (Hybrid: STEP/STL hier, .f3d in Fusion-Cloud). Mein LLM läuft idealerweise nur auf dem VPS (Sicherheits-Containment, Job #0). Ich chattet vom Handy per Telegram-Bot 24/7 mit dem VPS.
 
 ## Deine Domänen
 
-- **VPS (Hostinger KVM 1, 179.198.208.197):** SSH-Alias `hermes-vps`, Hermes-Agent-Container `hermes-agent-ekgx-hermes-agent-1` (Port 4860 intern, extern dynamisch)
+- **VPS (Hostinger KVM 1):** SSH-Alias `hermes-vps`, Hermes-Agent-Container `hermes-agent-ekgx-hermes-agent-1` (Port 4860 intern, extern dynamisch). IP/Hostname siehe `INTERNAL-VPS-DETAILS.md`.
 - **SSH-Tunnel:** `13_VPS_Config/Hermes-Tunnel-Auto.bat` (portiert dynamische Port-Erkennung)
 - **Cronjobs:** 11 aktiv (Health, Backup, Updates, Morning-Briefing, Security-Monitor, Repo-Review-Reminder, GitHub-Cleaning) — siehe `01_Dokumentation/Projekt-Memory.md`
 - **Telegram-Bot:** VPS-Telegram-Bot, Sidecar `telegram_to_github.sh` (Commit `3e91d85`, wartet auf GitHub-PAT)

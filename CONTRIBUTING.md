@@ -67,7 +67,7 @@ Danke für dein Interesse am Hermes-VTOL-Projekt! Dieses Dokument beschreibt die
 
 ```bash
 # Clone
-git clone https://github.com/Superkatzo/Hermes-VTOL.git
+git clone https://github.com/rotorbase/Hermes-VTOL.git
 cd Hermes-VTOL
 
 # Neuer Branch
@@ -85,4 +85,4 @@ git push origin feature/mein-feature
 
 ## Kontakt
 
-Bei Fragen: Issue erstellen oder @Superkatzo direkt ansprechen.
+Bei Fragen: Issue erstellen oder @rotorbase direkt ansprechen.

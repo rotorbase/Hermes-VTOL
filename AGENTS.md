@@ -93,7 +93,7 @@ Werte auf dieser Maschine. Bei Abweichung messen, nicht annehmen.
 | VRAM belegt, Stack läuft | ~7100 MiB (Leerlauf ~1000 MiB) |
 | VRAM-Schwelle GPU/CPU | 2000 MiB |
 | Mem0-Ports | 50260, 50261 |
-| CUDA-DLLs | 12 Stück in `C:\Users\willow\.unsloth\llama.cpp\build\bin\Release\` |
+| CUDA-DLLs | 12 Stück in `%USERPROFILE%\.unsloth\llama.cpp\build\bin\Release\` |
 
 ### Mem0-Stack prüfen und starten
 
@@ -106,7 +106,7 @@ powershell.exe -NoProfile -Command 'foreach ($p in @(50260,50261)) { try { $c=Ne
 Ports zu? Stack starten, ohne nachzufragen:
 
 ```bash
-powershell.exe -ExecutionPolicy Bypass -File "C:\Users\willow\Documents\Hermes-VTOL\01_Dokumentation\Mem0-Setup\mem0-server.ps1" -Action start
+powershell.exe -ExecutionPolicy Bypass -File ".\01_Dokumentation\Mem0-Setup\mem0-server.ps1" -Action start
 ```
 
 Das läuft 20–45 s im Hintergrund. Nicht auf das Fenster warten, weiterarbeiten
@@ -123,7 +123,7 @@ nvidia-smi --query-gpu=memory.used --format=csv,noheader
 
 Über 2000 MiB = Modell auf der GPU. Unter 2000 MiB = CPU-Fallback, CUDA-DLLs
 fehlen. Dann die 12 DLLs aus
-`C:\Users\willow\.unsloth\studio\unsloth_studio\Lib\site-packages\torch\lib\`
+`%USERPROFILE%\.unsloth\studio\unsloth_studio\Lib\site-packages\torch\lib\`
 in das llama.cpp-Release-Verzeichnis kopieren, Stack neu starten, VRAM erneut
 messen. Erst danach „läuft auf GPU" melden.
 

@@ -41,7 +41,7 @@ Die **wichtigste Woche-Arbeit**: Eine **„Plug-and-Play"-ConOps-Vorlage** für 
 Wert für Käufer: Spart 4-8 Wochen Arbeit + €5-10k Berater-Kosten
 ```text
 
-→ [ConOps-Vorlage-SAR.md](https://github.com/Superkatzo/Hermes-VTOL/blob/main/01_Dokumentation/ConOps-Vorlage-SAR.md)
+→ [ConOps-Vorlage-SAR.md](https://github.com/rotorbase/Hermes-VTOL/blob/main/01_Dokumentation/ConOps-Vorlage-SAR.md)
 
 ### 💰 Kosten-Realität
 
@@ -53,7 +53,7 @@ Wir haben die Kosten **transparent** aufgeschlüsselt:
 | CAD + Software (laufend) | €500/Jahr | €1.5k/Jahr | €3k/Jahr |
 | Versicherungen | €1.2k/Jahr | €2.5k/Jahr | €4.5k/Jahr |
 
-→ [Kosten-Realität](https://github.com/Superkatzo/Hermes-VTOL/blob/main/01_Dokumentation/Kosten-Realitaet.md)
+→ [Kosten-Realität](https://github.com/rotorbase/Hermes-VTOL/blob/main/01_Dokumentation/Kosten-Realitaet.md)
 
 ---
 
@@ -73,7 +73,7 @@ Heute Abend habe ich ein **9-Cronjob-Monitoring-System** aufgesetzt:
 | `morning_briefing.sh` | täglich 10:00 MESZ | Morgens-Nachricht an Telegram |
 | `security_monitor.sh` | täglich 23 UTC | SSH-Bruteforce, Fail2Ban |
 
-→ Skripte im [VPS-Config-Ordner](https://github.com/Superkatzo/Hermes-VTOL/tree/main/13_VPS_Config)
+→ Skripte im [VPS-Config-Ordner](https://github.com/rotorbase/Hermes-VTOL/tree/main/13_VPS_Config)
 
 Test-Alerts wurden verifiziert — **4 Test-Nachrichten erfolgreich empfangen**.
 
@@ -105,7 +105,7 @@ Die ConOps-Vorlage ist mein Verkaufs-Trumpf. Der Kosten-Plan zeigt, dass €24k 
 
 <div class="callout-warn">
   <div class="label">Fragen oder Feedback?</div>
-  <p style="margin: 0.4rem 0 0;">Issue direkt im <a href="https://github.com/Superkatzo/Hermes-VTOL/issues">GitHub-Repo</a> oder im nächsten Recap.</p>
+  <p style="margin: 0.4rem 0 0;">Issue direkt im <a href="https://github.com/rotorbase/Hermes-VTOL/issues">GitHub-Repo</a> oder im nächsten Recap.</p>
 </div>
 
 **— will, am 21.09.2026**

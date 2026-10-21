@@ -1,8 +1,9 @@
 # SECURITY.md — Hermes-VTOL Sicherheits-Dokumentation
 
 > **Zweck:** Übersicht aller Sicherheits-Maßnahmen, die auf dem VPS `hermes-vps` (Hostinger KVM 1) umgesetzt sind.
-> **Stand:** 2026-09-24
-> **Wichtig:** Diese Datei enthält KEINE Secrets, IPs oder Token.
+> **Stand:** 2026-10-01
+> **Was diese Datei enthält:** Public-Key-Fingerprint, lokaler SSH-Key-Pfad, fail2ban-Konfig, Recovery-Plan, Cron-Übersicht. **Keine** Klartext-Secrets, Passwörter, Tokens, Private-Keys oder `.env`-Inhalte.
+> **Was diese Datei NICHT enthält:** VPS-IPv4-Adresse, Hostinger-Hostname, persönliche Pfade, SSH-Key-Files — diese Werte stehen in `INTERNAL-VPS-DETAILS.md` (lokal, **nicht** im Repo).
 
 ---
 
@@ -99,17 +100,29 @@ PasswordAuthentication no
 
 Folgende Dinge sind **bewusst nicht** im Repo (Sicherheit):
 
-- ❌ VPS-IP-Adresse
-- ❌ SSH-Public-Key (außer der in `~/.ssh/config` lokal)
+- ❌ VPS-IPv4-Adresse (siehe `INTERNAL-VPS-DETAILS.md`, lokal)
+- ❌ VPS-Hostname / SSH-Alias-Befehle (siehe `INTERNAL-VPS-DETAILS.md`, lokal)
+- ❌ Persönliche User-Pfade (z. B. `C:\Users\…` auf dem Entwickler-PC)
+- ❌ Persönliche Email-Adressen
 - ❌ GitHub-PAT (in `/opt/data/.env` im Container, nicht im Repo)
 - ❌ Telegram-Bot-Token (in `/opt/data/.env` im Container)
+- ❌ Discord-Bot-Token (in Container-Env, nicht im Repo)
+- ❌ LLM-Provider-Keys (in `/opt/data/.env`, nicht im Repo)
 - ❌ hPanel-Zugangsdaten
 - ❌ VPS-Admin-Passwort
+- ❌ `DASHBOARD_AUTH_SECRET` (in Container-Env, nicht im Repo)
+
+**Was im Repo bleibt** (bewusst, weil Architektur-Doku ohne Geheimnis-Wert):
+
+- ✅ SSH-Public-Key-**Fingerprint** (nicht der Key selbst — der ist wie ein Username)
+- ✅ fail2ban-Konfiguration und Cron-Zeiten
+- ✅ Struktur-Pfade wie `/opt/data/...` (Server-Layout, nicht User-spezifisch)
 
 **Wo diese stattdessen gespeichert sind:**
 
 - Container-`/opt/data/.env` (live deployed, nicht versioniert)
 - Lokaler `~/.ssh/` (User-spezifisch, nicht im Repo)
+- `INTERNAL-VPS-DETAILS.md` (lokal, **nicht** im Repo, in `.gitignore`)
 - User-Gedächtnis / Passwort-Manager
 
 ---

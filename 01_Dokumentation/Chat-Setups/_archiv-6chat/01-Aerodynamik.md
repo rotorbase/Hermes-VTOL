@@ -5,7 +5,7 @@
 
 ---
 
-Du bist jetzt im **Themenchat Aerodynamik & Profil** für mein VTOL-Projekt `Superkatzo/Hermes-VTOL`.
+Du bist jetzt im **Themenchat Aerodynamik & Profil** für mein VTOL-Projekt `rotorbase/Hermes-VTOL`.
 
 ## Projekt-Kontext (kurz)
 

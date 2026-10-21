@@ -9,8 +9,8 @@ Live-Konfiguration des produktiven Hermes-VPS (Stand: aktiv).
 | **Anbieter** | Hostinger |
 | **Plan** | KVM 1 |
 | **Standort** | Deutschland |
-| **Hostname** | srv1998925.hstgr.cloud |
-| **IPv4** | 179.198.208.197 |
+| **Hostname** | `<siehe INTERNAL-VPS-DETAILS.md>` |
+| **IPv4** | `<siehe INTERNAL-VPS-DETAILS.md>` |
 | **OS** | Ubuntu 24.04 LTS |
 | **RAM** | 3,8 GB / 4 GB |
 | **Disk** | 6,1 GB / 48 GB |
@@ -19,10 +19,13 @@ Live-Konfiguration des produktiven Hermes-VPS (Stand: aktiv).
 
 | Methode | Befehl |
 | --------- | -------- |
-| **SSH (Standard)** | `ssh hermes-vps` |
-| **SSH mit Hostname** | `ssh srv1998925` |
-| **Tunnel für UI** | `ssh -L 8080:127.0.0.1:32768 -N hermes-vps` |
-| **Hermes-UI (im Browser)** | `http://localhost:8080` |
+| **SSH (Standard)** | `ssh hermes-vps` (Alias in `~/.ssh/config`) |
+| **SSH mit Hostname** | `<siehe INTERNAL-VPS-DETAILS.md>` |
+| **Tunnel für UI** | `ssh -L <LOCAL_PORT>:127.0.0.1:<DYNAMIC_PORT> -N hermes-vps` (Port dynamisch — siehe Auto-Tunnel-Helper) |
+| **Hermes-UI (im Browser)** | `http://localhost:<LOCAL_PORT>` |
+
+
+> **Hinweis:** Konkrete Hostnamen, IPs, Tunnel-Befehle und Auth-Pfade stehen in **`INTERNAL-VPS-DETAILS.md`** (lokal, in `.gitignore`). Diese Datei beschreibt die **Struktur** und das **Vorgehen**; die **Werte** liegen separat.
 
 ## LLM-Konfiguration
 

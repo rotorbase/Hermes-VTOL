@@ -3,7 +3,7 @@ name: 🛩️ Designänderung
 about: Vorgeschlagene Änderung am Design, Profil, Komponente oder Schnittstelle
 title: "[DESIGN] "
 labels: design, enhancement
-assignees: Superkatzo
+assignees: rotorbase
 ---
 
 ## Typ der Änderung

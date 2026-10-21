@@ -3,7 +3,9 @@
 > **Du verkaufst die Drohne, du fliegst sie nicht.**
 > Das ändert die Pflichten grundlegend — hier sind deine Hersteller-Pflichten.
 
-**Originale werden lokal gespeichert unter `C:\Users\willow\Documents\EASA\`**.
+> Originale (EASA-PDFs, JARUS, LuftVO) werden **lokal auf dem Entwickler-PC** gespeichert, nicht im Repo (Lizenz-/Copyright-Gründe).
+> Konkrete Pfade siehe `INTERNAL-VPS-DETAILS.md` (lokal, in `.gitignore`).
+> Versionsnummern und Online-Links stehen in den jeweiligen Doku-Dateien (`Dokument-Navigator.md`, `JARUS-Übersicht.md`).
 
 ---
 
@@ -209,14 +211,9 @@
 
 ## 📂 Wo die Originaldokumente sind
 
-| Dokument | Lokaler Pfad |
-| ---------- | -------------- |
-| EASA-EAR-UAS-2026-06.pdf | `C:\Users\willow\Documents\EASA\` |
-| EU-VO-2019-947.pdf | dito |
-| EU-VO-2019-945.pdf | dito |
-| LuftVO-2026.pdf | dito |
-| JARUS-SORA 2.5 Dokumente | dito |
-| (Optional) EU-VO-2021-664, EU-VO-785-2004, FAA Part 107 | dito |
+> Original-PDFs (EASA-EAR-UAS, EU-VOs, LuftVO, JARUS-SORA 2.5) liegen **lokal auf dem Entwickler-PC**, nicht im Repo.
+> Konkrete Pfade siehe `INTERNAL-VPS-DETAILS.md` (lokal, in `.gitignore`).
+> Versionsstand und Bezugs-Quellen sind in den jeweiligen Doku-Dateien dokumentiert.
 
 ---
 

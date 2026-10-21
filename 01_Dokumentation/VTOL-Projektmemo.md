@@ -1,7 +1,7 @@
 # 🚁 VTOL-Projekt — Briefing-Memo
 
 > **Kurzes Briefing** für den Wiedereinstieg nach Pausen.
-> Stand: 2026-09-22 · Für Details: siehe Repo `Superkatzo/Hermes-VTOL`
+> Stand: 2026-09-22 · Repo: `rotorbase/Hermes-VTOL`.
 
 ---
 
@@ -51,15 +51,15 @@ Einsatzraum: **Mitteleuropa / Deutschland** (Mischbetrieb urban/ländlich), rege
 
 | Asset | Pfad |
 | ------- | ------ |
-| **Repo (public)** | <https://github.com/Superkatzo/Hermes-VTOL> |
+| **Repo (public)** | <https://github.com/rotorbase/Hermes-VTOL> |
 | **Lastenheft** | `01_Dokumentation/Lastenheft/Lastenheft-VTOL-Zivildrohne.md` |
 | **Todo-Liste** | `01_Dokumentation/Todos/Todo-Liste.md` |
 | **CAD (geplant)** | `03_CAD/` (Fusion 360 STEP/STL) |
 | **FEM (geplant)** | `04_FEM_Simulation/` |
 | **Python-Skripte** | `12_Skripte_Tools/` (z. B. `analyze_profiles.py`) |
 | **VPS-Konfiguration** | `13_VPS_Config/` (Bootstrap, Hardening, Firewall, Backup-Skripte) |
-| **Lokal (PC)** | `C:\Users\willow\Documents\Hermes-VTOL\` |
-| **VPS (live)** | `srv1998925.hstgr.cloud` (Ubuntu 24.04, Hermes-Container) |
+| **Lokal (PC)** | siehe `INTERNAL-VPS-DETAILS.md` (lokal, in `.gitignore`) |
+| **VPS (live)** | Hostinger KVM 1 (Ubuntu 24.04, Hermes-Container) — Details siehe `INTERNAL-VPS-DETAILS.md` |
 
 ---
 

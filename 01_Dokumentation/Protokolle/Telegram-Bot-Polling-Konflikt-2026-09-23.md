@@ -101,7 +101,7 @@ Die Telegram-Bot-Doku beschreibt das Limit klar: **Nur 1× Polling gleichzeitig*
 **Hauptbot auf Webhook umstellen**, Sidecar weiter Polling:
 
 ```text
-TELEGRAM_WEBHOOK_URL=https://srv1998925.hstgr.cloud:8443/telegram
+TELEGRAM_WEBHOOK_URL=https://<siehe INTERNAL-VPS-DETAILS.md>:8443/telegram
 TELEGRAM_WEBHOOK_PORT=8443
 TELEGRAM_WEBHOOK_CERT=/path/to/cert.pem
 ```text

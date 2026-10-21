@@ -153,6 +153,12 @@ local_config.yaml
 /13_VPS_Config/backups/*
 !/13_VPS_Config/backups/.gitkeep
 
+# Persönliche / sensible Details (VPS-IP, persönliche Pfade, SSH-Aliase, persönliche Emails)
+/INTERNAL-VPS-DETAILS.md
+
+# KeePassXC-Migrations-Checkliste (Inventar aller Secrets + Pfade)
+/01_Dokumentation/Sicherheit/KeePassXC-Migrations-Checkliste.md
+
 # Downloads / temporäre Inhalte
 /Downloads/
 /Desktop.ini

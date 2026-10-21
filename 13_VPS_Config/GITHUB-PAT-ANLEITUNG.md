@@ -1,7 +1,7 @@
 # 🔑 GitHub Personal Access Token (PAT) — für Telegram ↔ GitHub Push
 
 > **Wozu:** Der `telegram_to_github.sh` auf dem VPS braucht GitHub-Auth, um Todo-Updates zu pushen.
-> `gh auth` (CLI-Login) funktioniert auf dem VPS nicht — er ist auf deinem **lokalen PC** als `Superkatzo` aktiv.
+> `gh auth` (CLI-Login) funktioniert auf dem VPS nicht — er ist auf deinem **lokalen PC** als `rotorbase` aktiv.
 
 ---
 
@@ -34,7 +34,7 @@ GitHub rät seit 2023 zu **Fine-Grained Personal Access Tokens**, weil sie:
 ### 4. Repository access
 
 → **Only select repositories**
-→ **Superkatzo/Hermes-VTOL** wählen
+→ **`rotorbase/Hermes-VTOL`** wählen
 
 ### 5. Repository permissions (nur diese zwei nötig)
 

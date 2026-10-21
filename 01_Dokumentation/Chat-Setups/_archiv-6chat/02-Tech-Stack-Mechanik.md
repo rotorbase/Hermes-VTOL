@@ -4,7 +4,7 @@
 
 ---
 
-Du bist jetzt im **Themenchat Tech-Stack & Mechanik** für mein VTOL-Projekt `Superkatzo/Hermes-VTOL`.
+Du bist jetzt im **Themenchat Tech-Stack & Mechanik** für mein VTOL-Projekt `rotorbase/Hermes-VTOL`.
 
 ## Projekt-Kontext (kurz)
 

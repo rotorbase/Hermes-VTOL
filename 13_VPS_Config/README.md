@@ -22,6 +22,7 @@ Konfiguration und Setup-Skripte für den Hostinger VPS (Hermes-Agent-Instanz).
 | `auto_updates.sh` | Unattended-Upgrades aktivieren |
 | `monitor.sh` | Health-Check + Memory-Reporting |
 | `ssh_key_setup.md` | Anleitung SSH-Key-Generierung |
+| `KeePassXC-Setup.md` | Lokaler Passwort-Manager (offline, Open Source) — inkl. YubiKey-Phase |
 
 ## Erstmaliges Setup (Reihenfolge)
 

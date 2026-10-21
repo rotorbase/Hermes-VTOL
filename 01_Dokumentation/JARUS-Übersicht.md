@@ -7,11 +7,9 @@
 
 ## 📦 Lokales Archiv-Verzeichnis
 
-```text
-C:\Users\willow\Documents\EASA\JARUS\
-```text
-
-(Die Originaldateinamen werden so belassen, wie sie von JARUS kommen.)
+> Original-JARUS-PDFs liegen **lokal auf dem Entwickler-PC**, nicht im Repo.
+> Konkrete Pfade siehe `INTERNAL-VPS-DETAILS.md` (lokal, in `.gitignore`).
+> Audit-Trail (diese Übersicht) bleibt im Repo, weil sie keine lizenzpflichtigen Inhalte enthält.
 
 ---
 

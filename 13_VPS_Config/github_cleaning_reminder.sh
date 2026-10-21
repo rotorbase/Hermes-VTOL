@@ -26,8 +26,8 @@ Hallo willow! Heute ist Freitag — Zeit für den wöchentlichen Repo-Check.
 • Doku-Updates seit letztem Cleaning-Tag synchron?
 
 💬 *Antworte mit \`cleaning start\`, dann gehe ich mit dir durch:*
-• \`gh issue list --repo Superkatzo/Hermes-VTOL --state open\`
-• \`gh pr list --repo Superkatzo/Hermes-VTOL --state open\`
+• \`gh issue list --repo rotorbase/Hermes-VTOL --state open\`
+• \`gh pr list --repo rotorbase/Hermes-VTOL --state open\`
 • \`git fetch --all --prune\` + Branch-Übersicht
 
 📌 *Nicht warten bis es unübersichtlich wird — lieber wöchentlich kurz.*
