@@ -58,6 +58,7 @@ Zielgruppen: SAR, Wildschutz, Behörden, kommerzielle Inspektion.
 | Gliederung | `01_Dokumentation/`, `02_Aerodynamik/` … `13_VPS_Config/` |
 | Markdown | Markdownlint; MD013/024/033/060 sind per CI deaktiviert, MD047 (Newline am Ende) nicht |
 | Commits | Conventional Commits (`feat:`, `fix:`, `ci:`, `chore:`, `docs:`) |
+| Attribution | `Assisted-by: Hermes` — **nie** `Co-authored-by:` |
 
 Doku-Push lief früher über einen Telegram-Sidecar (ersetzt durch `shared-chat-todo`-Skill, 2026-10-21). Polling-Konflikt mit Hauptbot war möglich, siehe Vorfall-Protokoll.
 
